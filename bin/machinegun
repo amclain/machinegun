@@ -2,4 +2,4 @@
 
 require_relative '../lib/machinegun'
 
-MachineGun.run
+MachineGun.run(ENV["MACHINEGUN_INTERVAL"])
