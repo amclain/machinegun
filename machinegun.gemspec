@@ -4,8 +4,8 @@ Gem::Specification.new do |s|
   s.name      = 'machinegun'
   s.version   = version
   s.date      = Time.now.strftime '%Y-%m-%d'
-  s.summary   = 'An automatic reloading webserver for Ruby.'
-  s.description = "An automatic reloading webserver for Ruby."
+  s.summary   = 'An automatic reloading rack development web server for Ruby.'
+  s.description = 'An automatic reloading rack development web server for Ruby.'
   
   s.homepage  = 'https://github.com/amclain/machinegun'
   s.authors   = ['Alex McLain']
