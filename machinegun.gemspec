@@ -12,16 +12,20 @@ Gem::Specification.new do |s|
   s.email     = ['alex@alexmclain.com']
   s.license   = 'MIT'
   
-  s.files     =
-    ['license.txt', 'README.md'] +
-    # Dir['bin/**/*'] +
-    Dir['lib/**/*'] +
-    Dir['doc/**/*']
+  s.files     = [
+      'license.txt',
+      'README.md',
+    ] +
+    Dir[
+      'bin/**/*',
+      'lib/**/*',
+      'doc/**/*',
+    ]
   
-  s.executables = [
-  ]
+  s.executables = ['machinegun']
   
-  # s.required_ruby_version = '>= 2.0.0'
+  s.add_dependency 'rack', '~> 1.6', '>= 1.6.4'
+  s.add_dependency 'filewatcher', '~> 0.5.2'
   
   s.add_development_dependency 'rake'
   s.add_development_dependency 'yard'
