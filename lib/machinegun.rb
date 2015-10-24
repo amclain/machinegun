@@ -1,12 +1,17 @@
 require 'rack'
 require 'filewatcher'
 
+# An automatic reloading Rack development web server for Ruby.
 class MachineGun
   
+  # Run the automatically-reloading web server.
+  # This method blocks.
+  # @option opts [Numeric] :interval (0.5) Interval in seconds to scan the
+  #   filesystem for changes.
   def self.run opts = {}
-    pid = start_server
-     
     interval = opts[:interval] || 0.5
+     
+    pid = start_server
      
     FileWatcher.new("./**/*.rb").watch interval do
       Process.kill "INT", pid
@@ -18,6 +23,8 @@ class MachineGun
   
   private
   
+  # Start the web server in a forked process.
+  # @return process id
   def self.start_server
     pid = fork do
       $0 = "rack"
