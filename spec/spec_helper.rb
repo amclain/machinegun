@@ -7,8 +7,8 @@ RSpec.configure do |c|
   c.expect_with(:rspec) { |c| c.syntax = [:should, :expect] }
   c.mock_with(:rspec)   { |c| c.syntax = [:should, :expect] }
   
-  # Only run tests marked with iso:true.
-  c.filter_run_including iso:true
+  # Only run tests marked with focus: true.
+  c.filter_run_including focus: true
   c.run_all_when_everything_filtered = true
   
   # Abort after first failure.
