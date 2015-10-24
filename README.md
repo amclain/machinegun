@@ -1,6 +1,9 @@
 # machinegun
 
 [![Gem Version](https://badge.fury.io/rb/machinegun.svg)](https://badge.fury.io/rb/machinegun)
+[![Coverage Status](https://coveralls.io/repos/amclain/machinegun/badge.svg?branch=master&service=github)](https://coveralls.io/github/amclain/machinegun?branch=master)
+[![API Documentation](https://img.shields.io/badge/docs-api-blue.svg)](http://www.rubydoc.info/gems/machinegun)
+[![MIT License](https://img.shields.io/badge/license-MIT-yellowgreen.svg)](https://github.com/amclain/machinegun/blob/master/license.txt)
 
 An automatic reloading Rack development web server for Ruby.
 
