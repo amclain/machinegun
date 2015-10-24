@@ -13,7 +13,7 @@ class MachineGun
      
     pid = start_server
      
-    FileWatcher.new("./**/*.rb").watch interval do
+    FileWatcher.new("./**/*.rb").watch(interval) do
       Process.kill "INT", pid
       Process.wait pid
       
