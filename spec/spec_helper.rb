@@ -1,6 +1,8 @@
 require 'pry'
 require 'rspec/its'
+require 'coveralls'
 
+Coveralls.wear!
 
 RSpec.configure do |c|
   # Enable 'should' syntax
