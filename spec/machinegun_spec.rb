@@ -67,8 +67,8 @@ describe MachineGun do
   
   before {
     stub_fork
-    stub_rack_server **rack_stub_opts
-    stub_file_watcher **file_watcher_opts
+    stub_rack_server rack_stub_opts
+    stub_file_watcher file_watcher_opts
   }
   
   describe "class" do
