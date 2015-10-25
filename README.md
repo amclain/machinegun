@@ -24,3 +24,10 @@ For example, the following command will launch the web server on port 9393 and b
 ```text
 $ machinegun -p 9393 -o 0.0.0.0
 ```
+
+## Development
+
+To skip the integration tests during development, run the test suite with:
+```text
+$ SKIP_INTEGRATION_TESTS=true bundle exec rake
+```

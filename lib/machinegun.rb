@@ -24,11 +24,11 @@ class MachineGun
      
     @pid = start_server
      
-    @watcher = FileWatcher.new("./**/*.rb").tap do |watcher|
-      watcher.watch interval do
-        stop_server
-        @pid = start_server
-      end
+    @watcher = FileWatcher.new("./**/*.rb")
+    
+    @watcher.watch interval do
+      stop_server
+      @pid = start_server
     end
   end
   
