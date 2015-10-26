@@ -32,7 +32,11 @@ EOS
   
   let(:client) {}
   let(:machinegun) { MachineGun.new }
-  let(:machinegun_thread) { Thread.new { machinegun.run } }
+  let(:machinegun_thread) { Thread.new { machinegun.run interval: interval } }
+  
+  # FileWatcher blows up if the interval is a string. Pass a string here to
+  # make sure the MACHINEGUN_INTERVAL env var is converted correctly.
+  let(:interval) { "1" }
   
   let(:message_1) { "message 1" }
   let(:message_2) { "message 2" }
@@ -63,7 +67,7 @@ EOS
     
     # Cause file system changes that should reload the server.
     write_output_file message_2
-    sleep 1
+    sleep interval.to_f + 1
     
     query_web_server.should eq message_2
   end

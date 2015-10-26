@@ -20,7 +20,7 @@ class MachineGun
   #   filesystem for changes.
   def run opts = {}
     @running = true
-    interval = opts[:interval] || 0.5
+    interval = (opts[:interval] || 0.5).to_f # FileWatcher interval must be numeric.
      
     @pid = start_server
      
