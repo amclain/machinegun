@@ -9,6 +9,10 @@ An automatic reloading Rack development web server for Ruby.
 
 This gem was inspired by [shotgun](https://github.com/rtomayko/shotgun), which reloads the application on every request to ensure that the latest code is running. However, reloading on request can cause performance problems for applications that consume a lot of memory and/or generate a lot of requests. machinegun solves this problem by reloading the application when there are changes to the filesystem, instead of reloading on each request. This allows for the best of both worlds: A web server that reloads when changes to the code are made, and also performs quickly when serving requests.
 
+## End Of Life Notice
+
+This library is no longer being maintained. The original goal was to replace shotgun with a web server that reloads on file system changes for better performance. When developing web applications, it has become best practice to run the application in a virtual machine or Docker container during development. This can impede the file system inotify events emitted by the guest from propagating to the host, thereby defeating the file watching mechanism (it falls back to polling, which is resource intensive). A better alternative is to run a web server like [unicorn](https://rubygems.org/gems/unicorn) or [puma](https://rubygems.org/gems/puma) inside the container, with a file watcher running on the host. The file watcher can then notify the containerized webserver to restart by sending it the appropriate system signal (typically `SIGUSR1`). This solution has much higher throughput than a webrick-based solution like shotgun or machinegun, and is great for single-page applications or other apps that make many HTTP requests per page load.
+
 ## Installation
 
 ```text
